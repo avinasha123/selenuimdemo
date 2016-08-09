@@ -24,6 +24,9 @@ public class TestBaseSetup {
 		case "firefox":
 			driver = initFirefoxDriver(appURL);
 			break;
+		case "ie":
+			driver = initChromeDriver(appURL);
+			break;
 		default:
 			System.out.println("browser : " + browserType + " is invalid, Launching Firefox as browser of choice..");
 			driver = initFirefoxDriver(appURL);
@@ -55,7 +58,7 @@ public class TestBaseSetup {
 			setDriver(browserType, appURL);
 
 		} catch (Exception e) {
-			System.out.println("Error....." + e.getStackTrace());
+			System.out.println(e.getStackTrace());
 		}
 	}
 	
